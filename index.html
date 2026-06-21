@@ -138,9 +138,13 @@
       color: var(--accent);
     }
 
-    /* Updated: vertical photos will no longer be cropped */
+    /* Photo ratio system:
+       - Default photo: 4:3 for horizontal images
+       - Vertical photo: 3:4 for portrait images
+    */
     .photo {
       width: 100%;
+      aspect-ratio: 4 / 3;
       background: #ddd;
       border: 1px solid var(--line);
       margin-bottom: 22px;
@@ -148,10 +152,14 @@
       border-radius: 14px;
     }
 
+    .photo.vertical {
+      aspect-ratio: 3 / 4;
+    }
+
     .photo img {
       width: 100%;
-      height: auto;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
 
@@ -252,6 +260,7 @@
         <div class="meta"><span>Pictures</span><span>San Francisco</span></div>
         <div class="photo"><img src="images/san-francisco.jpg" alt="San Francisco" /></div>
         <h2>San Francisco, After a New Beginning</h2>
+
         <p class="body">
           Three weeks after joining a new company, I visited San Francisco.
           Now, a little over a month later, I want to look back on those few days. This is not meant to be a grand travel story. It is more a personal record of what it felt like to be in an unfamiliar city while beginning a new chapter in my work and life.
@@ -299,8 +308,9 @@
 
       <article id="bandi">
         <div class="meta"><span>Journal</span><span>Bandi</span></div>
-        <div class="photo"><img src="images/bandi_soccer.jpg" alt="Bandi" /></div>
+        <div class="photo vertical"><img src="images/bandi_soccer.jpg" alt="Bandi" /></div>
         <h2>Everyday Life with Bandi</h2>
+
         <p class="body">
           Bandi came into our home in September 2020, when the pandemic was still at its height.
         </p>
@@ -367,7 +377,7 @@
 
       <article style="display:none">
         <div class="meta"><span>Pet</span><span>Bandi</span></div>
-        <div class="photo"><img src="images/bandi_soccer.jpg" alt="Bandi" /></div>
+        <div class="photo vertical"><img src="images/bandi_soccer.jpg" alt="Bandi" /></div>
         <h2>Bandi, and the habit of paying attention.</h2>
         <p class="body">
           Some stories are not big. They repeat every day, quietly, until they become the texture of life.
