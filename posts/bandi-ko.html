@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>반디가 있는 일상 — Gihyun Kwon</title>
+  <meta name="description" content="반디와 함께 사는 일상에 대한 개인적인 기록." />
+
+  <!-- Social media preview -->
+  <meta property="og:title" content="반디가 있는 일상" />
+  <meta property="og:description" content="반디와 함께 사는 일상에 대한 개인적인 기록." />
+  <meta property="og:image" content="https://gihyun.com/images/bandi_soccer.jpg" />
+  <meta property="og:url" content="https://gihyun.com/posts/bandi-ko.html" />
+  <meta property="og:type" content="article" />
+
+  <style>
+    :root {
+      --bg: #efe8dd;
+      --text: #241f1b;
+      --muted: #756a60;
+      --line: #d3c5b5;
+      --card: #fbf3e8;
+      --accent: #8a5a44;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(760px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: rgba(239, 232, 221, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+    }
+
+    .name {
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    main {
+      padding: 48px 0 72px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 32px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: var(--accent);
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 14px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      font-size: clamp(38px, 7vw, 62px);
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: -0.06em;
+    }
+
+    .language-links {
+      display: flex;
+      gap: 10px;
+      margin: 0 0 26px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .language-links a {
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(251, 243, 232, 0.7);
+    }
+
+    .language-links a.active {
+      color: var(--card);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: #ddd;
+      border: 1px solid var(--line);
+      margin-bottom: 28px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .body {
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.72;
+      margin: 0 0 18px;
+      word-break: keep-all;
+    }
+
+    footer {
+      padding: 32px 0 46px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 560px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      main {
+        padding: 38px 0 60px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a class="name" href="../index.html">Gihyun Kwon</a>
+      <nav>
+        <a href="../index.html#feed">Notes</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <a class="back-link" href="../index.html">← Back to Notes</a>
+
+      <article>
+        <div class="meta">
+          <span>Journal</span>
+          <span>Bandi</span>
+        </div>
+
+        <h1>반디가 있는 일상</h1>
+
+        <div class="language-links">
+          <a href="bandi-en.html">English</a>
+          <a class="active" href="bandi-ko.html">한국어</a>
+        </div>
+
+        <div class="photo">
+          <img src="../images/bandi_soccer.jpg" alt="반디" />
+        </div>
+
+        <p class="body">
+          반디가 우리 집에 온 것은 2020년 9월, 코로나가 한참 심하던 시절이었다.
+        </p>
+
+        <p class="body">
+          생각해 보니 반디를 집으로 데려오기 전까지 반디는 내가 마스크를 쓴 모습만 많이 보았을 것이다.
+          그래서 이 사람이 어떤 얼굴을 가진 사람인지, 어떤 반려인과 함께 살게 되는 것인지 알기 어려웠을지도 모른다.
+        </p>
+
+        <p class="body">
+          반디라는 이름을 지어주기까지 여러 후보가 있었다.
+          흔한 이름보다는, 부를 때마다 무언가 좋은 생각이 떠오르는 이름이면 좋겠다고 생각했다.
+          그러다 반딧불처럼 볼 때마다 번뜩이는 생각을 나게 해주는 존재였으면 좋겠다는 결론에 이르렀다.
+          그렇게 반디가 되었다.
+        </p>
+
+        <p class="body">
+          반디를 처음 보았을 때, 그러니까 반디가 생후 3개월쯤 되었을 때,
+          솔직히 반디가 정말 웰시코기인지 아닌지 알기 어려웠다.
+          품에 안고 있는 순간에도 조금 난감했다.
+          만약 반디가 정말 웰시코기가 아니라면 나는 어떻게 해야 하나, 하는 생각도 했다.
+        </p>
+
+        <p class="body">
+          내가 웰시코기를 키우고 싶었던 데에는 몇 가지 이유가 있었다.
+          우선 친근하고 애교가 많은 견종이라는 점이 좋았다.
+          똑똑하고 학습 능력이 뛰어나다는 이야기도 마음에 들었다.
+          영국 왕실에서 길렀던 견종이라는 점도 괜히 매력적으로 느껴졌다.
+          물론 그런 이유들은 반디와 함께 살기 시작한 뒤로는 크게 중요하지 않아졌다.
+          어느 순간부터 반디는 웰시코기라서 좋은 것이 아니라, 그냥 반디라서 좋은 존재가 되었다.
+        </p>
+
+        <p class="body">
+          반디는 알람 시계 역할을 한다.
+          지나가다 마주치는 사람들은 아파트에서 이렇게 큰 강아지를 키우는 것이 힘들지 않냐고 묻는다.
+          답은 힘들다.
+          하지만 반디가 주는 도움을 생각하면, 내가 감당해야 하는 수고로움은 꽤 작아진다.
+        </p>
+
+        <p class="body">
+          아침마다 반디 특유의 낑낑거리는 소리를 들으면 일어나서 밥을 주고 하루를 시작해야 한다.
+          가끔은 반디가 조용한데도 내가 먼저 자연스럽게 일어나는 날이 있다.
+          반디를 키우기 시작한 뒤로 한동안은 아침 산책도 열심히 했다.
+          물론 지금은 그 역할을 아내에게 많이 넘겨주었지만.
+        </p>
+
+        <p class="body">
+          반디를 처음 키우게 된 곳은 서울이 아니라 경기도 부천이었다.
+          더 정확히 말하면 서울과 부천의 접점에 가까운 곳이었다.
+          녹지가 많아서 사람들을 초대하면 다들 “서울 근처에 이런 곳이 있었어?” 하고 놀라곤 했다.
+        </p>
+
+        <p class="body">
+          나는 그곳에서 7년 넘게 살았고, 그중 5년은 반디와 함께 보냈다.
+          아파트에 살았지만 아침에 일어나면 캠핑장이나 시골에 온 것 같은 느낌이 들었다.
+          뒷산에서 내려오는 숲내음이 있었고, 높은 건물이 많지 않아 하늘을 넓게 볼 수 있었다.
+          반디와 함께 지내기에는 참 좋은 곳이었다.
+        </p>
+
+        <p class="body">
+          지금은 반디와 서울 한강 근처에 살고 있다.
+          시간이 날 때마다 한강 잔디밭에 나갈 수 있지만, 반디를 마음껏 풀어주기는 어렵다.
+          예전처럼 자유롭게 뛰어노는 모습을 자주 보기는 어렵지만,
+          그래도 발이 폭신한 곳을 걷게 해줄 수 있고, 다양한 친구들을 만나게 해줄 수 있다.
+        </p>
+
+        <p class="body">
+          반디는 이제 사람 나이로 치면 중년에 접어들었다.
+          나와 비슷한 시기를 보내고 있는 셈이다.
+          그래서 건강 관리에도 더 신경을 써야 한다.
+          최근에는 몸무게가 많이 늘어서 식사량을 절반 정도로 줄였고,
+          다행히 조금씩 체중이 줄고 있다.
+        </p>
+
+        <p class="body">
+          어제 저녁에는 오랜만에 배달 음식을 시켜 아내와 소파에 앉아 먹고 있었다.
+          그때 반디가 발 근처로 다가왔다.
+          특유의 눈빛으로 지긋이 나를 바라보았다.
+          나는 결국 평소보다 세 배 가까이 간식을 줄 수밖에 없었다.
+        </p>
+
+        <p class="body">
+          반디는 짖지 않고도 자신의 의사를 꽤 정확하게 전달한다.
+          그래서 가끔 생각한다.
+          소리를 내지 않고도 강렬한 침묵을 보여주는 것 역시 훌륭한 소통 전략이라는 사실을.
+        </p>
+
+        <p class="body">
+          어릴 때는 강아지를 키우는 것이 금지되어 있었다.
+          그래서 언젠가 강아지와 함께 사는 일은 나에게 작은 버킷 리스트 중 하나였다.
+          그런데 이제 그것은 너무나도 평범한 일상의 파편이 되었다.
+        </p>
+      </article>
+    </main>
+
+    <footer>
+      <div>© Gihyun Kwon</div>
+      <div>Seoul · gihyun.com</div>
+    </footer>
+  </div>
+</body>
+</html>
