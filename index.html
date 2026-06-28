@@ -14,7 +14,6 @@
       --muted: #6f6860;
       --soft: #9a9288;
       --line: #e3ddd4;
-      --card: #ffffff;
       --card-soft: #f6f2ec;
       --accent: #7c5b46;
       --shadow: 0 18px 50px rgba(31, 25, 18, 0.06);
@@ -206,6 +205,11 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.6s ease;
+    }
+
+    /* Keeps Bandi's ears visible in the cropped home card image */
+    .bandi-image img {
+      object-position: center 18%;
     }
 
     .note-card:hover .note-image img {
@@ -411,11 +415,6 @@
         line-height: 1.4;
       }
 
-      .note-image {
-        height: auto;
-        aspect-ratio: 4 / 3;
-      }
-
       .language-links {
         gap: 12px;
       }
@@ -498,8 +497,8 @@
       </article>
 
       <article class="note-card">
-        <a class="note-image" href="posts/bandi-en.html" aria-label="Read Bandi note in English">
-          <img src="images/bandi_soccer.jpg" alt="Bandi the Corgi" />
+        <a class="note-image bandi-image" href="posts/bandi-en.html" aria-label="Read Bandi note in English">
+          <img src="images/bandi-soccer.jpg" alt="Bandi the Corgi" />
         </a>
 
         <div class="note-content">
