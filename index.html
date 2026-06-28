@@ -3,205 +3,314 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Gihyun Kwon — Notes</title>
+  <meta name="description" content="A quiet personal channel by Gihyun Kwon, collecting photos, thoughts, journals, words, work lessons, Bandi, and small memories." />
+
   <style>
     :root {
-      --bg: #efe8dd;
-      --text: #241f1b;
-      --muted: #756a60;
-      --line: #d3c5b5;
-      --card: #fbf3e8;
-      --accent: #8a5a44;
+      --bg: #fbfaf7;
+      --text: #171411;
+      --muted: #6f6860;
+      --soft: #9a9288;
+      --line: #e3ddd4;
+      --card: #ffffff;
+      --card-soft: #f6f2ec;
+      --accent: #7c5b46;
+      --shadow: 0 18px 50px rgba(31, 25, 18, 0.06);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: Georgia, 'Times New Roman', serif;
+      font-family: Georgia, "Times New Roman", serif;
       line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    a { color: inherit; text-decoration: none; }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .wrap {
-      width: min(760px, calc(100% - 32px));
+      width: min(1120px, calc(100% - 48px));
       margin: 0 auto;
     }
 
     header {
-      padding: 28px 0 22px;
+      padding: 32px 0 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-      background: rgba(239, 232, 221, 0.9);
-      backdrop-filter: blur(12px);
-      z-index: 10;
     }
 
     .name {
-      font-size: 18px;
-      letter-spacing: -0.01em;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 400;
     }
 
     nav {
       display: flex;
-      gap: 18px;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: var(--muted);
+      gap: 28px;
+      align-items: center;
+      font-size: 17px;
     }
 
-    .intro {
-      padding: 44px 0 28px;
+    nav a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    nav a:hover::after,
+    nav a:first-child::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: var(--text);
+    }
+
+    .hero {
+      padding: 72px 0 76px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.18fr);
+      gap: 72px;
+      align-items: center;
     }
 
     .eyebrow {
-      font-family: Arial, sans-serif;
+      margin: 0 0 22px;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
-      letter-spacing: .16em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 18px;
     }
 
     h1 {
-      margin: 0 0 24px;
-      font-size: clamp(38px, 7.5vw, 64px);
-      line-height: .98;
+      margin: 0 0 26px;
+      font-size: clamp(46px, 6.6vw, 74px);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
       font-weight: 400;
-      letter-spacing: -0.06em;
     }
 
-    .intro p {
+    .hero-copy {
       margin: 0;
-      font-size: clamp(20px, 3vw, 27px);
-      line-height: 1.36;
-      color: #39342e;
+      max-width: 480px;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.55;
+      color: #332d27;
     }
 
     .quiet-feed {
-      margin: -20px 0 26px;
-      padding-bottom: 26px;
-      border-bottom: 1px solid var(--line);
-      font-family: Arial, sans-serif;
-      color: var(--muted);
-      font-size: 15px;
+      margin: 28px 0 0;
+      max-width: 460px;
+      font-size: clamp(17px, 1.8vw, 20px);
       line-height: 1.6;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .hero-photo {
+      min-height: 430px;
+      border: 1px solid var(--line);
+      background: var(--card-soft);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
     }
 
     .feed {
-      padding: 14px 0 70px;
+      padding: 0 0 76px;
     }
 
     .feed-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 20px;
-      padding: 10px 0 8px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 36px;
     }
 
     .feed-head h2 {
       margin: 0;
-      font-size: 30px;
+      font-size: 26px;
       line-height: 1;
-      letter-spacing: -0.04em;
       font-weight: 400;
+      letter-spacing: -0.035em;
+    }
+
+    .feed-line {
+      height: 1px;
+      background: var(--line);
     }
 
     .archive-link {
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      white-space: nowrap;
     }
 
-    article {
-      padding: 34px 0 38px;
-      border-bottom: 1px solid var(--line);
+    .archive-link span {
+      padding-left: 8px;
+    }
+
+    .note-card {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.94fr) minmax(0, 1.06fr);
+      overflow: hidden;
+      margin-bottom: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .note-image {
+      background: var(--card-soft);
+      min-height: 328px;
+      overflow: hidden;
+    }
+
+    .note-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 328px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .note-card:hover .note-image img {
+      transform: scale(1.025);
+    }
+
+    .note-content {
+      padding: 38px 44px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 34px;
     }
 
     .meta {
+      margin: 0 0 24px;
       display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 14px;
-      font-family: Arial, sans-serif;
+      gap: 14px;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
-      letter-spacing: .08em;
+      line-height: 1;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--muted);
     }
 
-    /* Photo ratio system:
-       - Default photo: 4:3 for horizontal images
-       - Vertical photo: 3:4 for portrait images
-    */
-    .photo {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: #ddd;
-      border: 1px solid var(--line);
-      margin-bottom: 22px;
-      overflow: hidden;
-      border-radius: 14px;
+    .meta .slash {
+      color: var(--soft);
+      letter-spacing: 0;
     }
 
-    .photo.vertical {
-      aspect-ratio: 3 / 4;
-    }
-
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    h2 {
-      margin: 0 0 10px;
-      font-size: clamp(28px, 5vw, 42px);
-      line-height: 1.05;
-      letter-spacing: -0.045em;
+    .note-title {
+      margin: 0 0 16px;
+      max-width: 520px;
+      font-size: clamp(34px, 4.2vw, 48px);
+      line-height: 1.04;
+      letter-spacing: -0.06em;
       font-weight: 400;
     }
 
-    .body {
-      font-family: Arial, sans-serif;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.65;
-      margin: 0 0 18px;
+    .excerpt {
+      margin: 0;
+      max-width: 520px;
+      color: #3d3832;
+      font-size: 18px;
+      line-height: 1.58;
     }
 
-    .note {
-      font-size: 20px;
-      line-height: 1.45;
-      margin: 0;
+    .note-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      margin-top: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .language-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      color: var(--text);
+    }
+
+    .language-links a {
+      white-space: nowrap;
+    }
+
+    .language-links a::after {
+      content: "→";
+      padding-left: 10px;
+    }
+
+    .language-links .divider {
+      width: 1px;
+      height: 14px;
+      background: var(--line);
     }
 
     .about {
-      padding: 52px 0 68px;
+      padding: 58px 0 64px;
       border-top: 1px solid var(--line);
-      font-family: Arial, sans-serif;
-      color: var(--muted);
-      font-size: 15px;
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 64px;
     }
 
-    .about strong {
-      display: block;
-      font-family: Georgia, 'Times New Roman', serif;
-      color: var(--text);
-      font-size: 28px;
+    .about h2 {
+      margin: 0;
+      font-size: 20px;
       line-height: 1.2;
-      letter-spacing: -0.035em;
       font-weight: 400;
-      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .about p {
+      margin: 0;
+      max-width: 620px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #3d3832;
     }
 
     footer {
@@ -209,192 +318,228 @@
       border-top: 1px solid var(--line);
       display: flex;
       justify-content: space-between;
-      gap: 12px;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
+      gap: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
       color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .wrap {
+        width: min(100% - 32px, 680px);
+      }
+
+      header {
+        padding: 26px 0 22px;
+      }
+
+      nav {
+        gap: 18px;
+        font-size: 15px;
+      }
+
+      .hero {
+        padding: 52px 0 58px;
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .hero-photo {
+        min-height: 280px;
+      }
+
+      .hero-photo img {
+        min-height: 280px;
+      }
+
+      .feed-head {
+        grid-template-columns: auto 1fr;
+      }
+
+      .archive-link {
+        grid-column: 1 / -1;
+      }
+
+      .note-card {
+        grid-template-columns: 1fr;
+      }
+
+      .note-content {
+        padding: 30px 26px 28px;
+      }
+
+      .note-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 560px) {
       header {
         align-items: flex-start;
         flex-direction: column;
+        gap: 18px;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      .meta {
+        flex-wrap: wrap;
+        line-height: 1.4;
+      }
+
+      .note-image,
+      .note-image img {
+        min-height: 250px;
+      }
+
+      .language-links {
         gap: 12px;
       }
 
-      nav { gap: 14px; }
-
-      .intro { padding: 38px 0 34px; }
-
-      footer { flex-direction: column; }
+      .language-links .divider {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
-      <a class="name" href="#">Gihyun Kwon</a>
-      <nav>
+      <a class="name" href="index.html">Gihyun Kwon</a>
+
+      <nav aria-label="Main navigation">
         <a href="#feed">Notes</a>
         <a href="#about">About</a>
       </nav>
     </header>
 
-    <section class="intro">
-      <div class="eyebrow">Personal journal · gihyun.com</div>
-      <h1>A library turning into a museum.</h1>
-      <p>
-        A tea-time space for connecting dots and piecing things together — fragments gathered to understand where I am going.
-      </p>
-    </section>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Personal channel · gihyun.com</p>
 
-    <p class="quiet-feed">A room of photos, thoughts, and memories gathered along the way.</p>
+        <h1>Notes before they become posts.</h1>
+
+        <p class="hero-copy">
+          Photos, thoughts, journals, words, work lessons, Bandi, and small stories I want to keep in my own place first.
+        </p>
+
+        <p class="quiet-feed">
+          A quiet feed of photos, thoughts, words, and small memories.
+        </p>
+      </div>
+
+      <figure class="hero-photo" aria-label="A quiet moment from San Francisco">
+        <img src="images/san-francisco.jpg" alt="A quiet view from San Francisco" />
+      </figure>
+    </section>
 
     <main class="feed" id="feed">
       <div class="feed-head">
         <h2>Latest notes</h2>
-        <a href="#" class="archive-link">View archive</a>
+        <div class="feed-line"></div>
+        <a class="archive-link" href="#feed">View all notes <span>→</span></a>
       </div>
 
-      <article>
-        <div class="meta"><span>Pictures</span><span>San Francisco</span></div>
-        <div class="photo"><img src="images/san-francisco.jpg" alt="San Francisco" /></div>
-        <h2>San Francisco, After a New Beginning</h2>
+      <article class="note-card">
+        <a class="note-image" href="posts/san-francisco-en.html" aria-label="Read San Francisco note in English">
+          <img src="images/san-francisco.jpg" alt="San Francisco" />
+        </a>
 
-        <p class="body">
-          Three weeks after joining a new company, I visited San Francisco.
-          Now, a little over a month later, I want to look back on those few days. This is not meant to be a grand travel story. It is more a personal record of what it felt like to be in an unfamiliar city while beginning a new chapter in my work and life.
-        </p>
-        <p class="body">
-          During my first one-on-one meeting after joining the company, she welcomed me and said she was glad I had joined. She also mentioned that I would soon have an overseas trip. The schedule came sooner than I had expected.
-        </p>
-        <p class="body">
-          The flight, which took more than 13 hours, felt shorter than I thought it would.
-          I left on a Sunday and arrived on a Sunday. Because of the time difference, it felt strangely as if I had gained an extra day.
-        </p>
-        <p class="body">
-          After landing, I got into a car with the others and headed to the hotel. The view outside the window was a little different from the San Francisco I had imagined. Older buildings, unfamiliar streets, a gray sky. I had clearly arrived in a new city, but I did not feel excited right away.
-        </p>
-        <p class="body">
-          After checking in, I went up to my room. The hallway leading to the elevator was narrow, and the room felt less quieter than I expected. Maybe because it was the first space I entered after such a long flight, every small sound and every unfamiliar detail seemed to stand out more clearly.
-        </p>
-        <p class="body">
-          Outside the window, I could see the rooftop of the building next door. I stood there for a while, looking at the worn concrete floor and the unpolished view beyond it.
-        </p>
-        <p class="body">
-          Am I really in San Francisco?
-        </p>
-        <p class="body">
-          I wondered how the others who had come on this trip were feeling at that moment.
-          A new company. A new role. A new city.
-          More than my own sense of unfamiliarity, I found myself thinking about how the people traveling with me were experiencing this time.
-        </p>
-        <p class="body">
-          That may have been the moment when this trip began to feel like more than just a visit to a new city. It started to feel like the first time I was learning my new role not only with my mind, but with my whole body.
-        </p>
-        <p class="body">
-          I felt a little nervous, a little dizzy, and a little out of place. Still, I was curious about what kind of memory these few days in the city would become.
-        </p>
-        <p class="body">
-          I put down my luggage and walked toward the bathroom to take a shower.
-          I thought that once I washed off the long flight and the unfamiliarity of the day, it might finally begin to feel real that I had arrived.
-        </p>
-        <p class="body">
-          Looking back now, my first day in San Francisco remains clearer in my memory not because of any grand scene, but because of the quiet air in that unfamiliar room and the view outside the window.
-          It was the first city I encountered after changing jobs, and the first time I truly felt the weight of a new role.
-          Starting with that first day, I want to slowly record the few days I spent in San Francisco.
-        </p>
+        <div class="note-content">
+          <div>
+            <p class="meta">
+              <span>Pictures</span>
+              <span class="slash">/</span>
+              <span>San Francisco</span>
+            </p>
+
+            <h2 class="note-title">San Francisco, my first city in California.</h2>
+
+            <p class="excerpt">
+              A few quiet days after starting a new chapter, remembered through photos and small notes.
+            </p>
+          </div>
+
+          <div class="note-footer">
+            <time datetime="2026-06">June 2026</time>
+
+            <div class="language-links" aria-label="Language links for San Francisco note">
+              <a href="posts/san-francisco-en.html">Read in English</a>
+              <span class="divider" aria-hidden="true"></span>
+              <a href="posts/san-francisco-ko.html" lang="ko">한국어로 읽기</a>
+            </div>
+          </div>
+        </div>
       </article>
 
-      <article id="bandi">
-        <div class="meta"><span>Journal</span><span>Bandi</span></div>
-        <div class="photo vertical"><img src="images/bandi_soccer.jpg" alt="Bandi" /></div>
-        <h2>Everyday Life with Bandi</h2>
+      <article class="note-card">
+        <a class="note-image" href="posts/bandi-en.html" aria-label="Read Bandi note in English">
+          <img src="images/bandi_soccer.jpg" alt="Bandi the Corgi" />
+        </a>
 
-        <p class="body">
-          Bandi came into our home in September 2020, when the pandemic was still at its height.
-        </p>
-        <p class="body">
-          Looking back, before we brought Bandi home, he must have mostly seen me wearing a mask. He probably had no way of knowing what my face really looked like, or what kind of person he was about to live with.
-        </p>
-        <p class="body">
-          Before we named him Bandi, there were several other names we considered. I did not want something too common. I wanted a name that would somehow spark a good thought each time I called it. Eventually, I came to the idea of a firefly — something that gives off a small flash of light whenever you see it. That is how he became Bandi.
-        </p>
-        <p class="body">
-          When I first saw him, when he was about three months old, I honestly could not tell whether he was really a Welsh Corgi. Even as I was holding him in my arms, I felt a little uncertain. If he turned out not to be a Welsh Corgi after all, what was I supposed to do?
-        </p>
-        <p class="body">
-          There were a few reasons I had wanted to raise a Welsh Corgi. I liked that they were known to be friendly and affectionate. I also liked hearing that they were smart and quick to learn. The fact that they had been loved by the British royal family also made the breed feel strangely appealing. But after I started living with Bandi, those reasons quickly became less important. At some point, Bandi was no longer lovable because he was a Welsh Corgi. He was lovable simply because he was Bandi.
-        </p>
-        <p class="body">
-          Bandi is also my alarm clock. People I meet sometimes ask whether it is difficult to raise a dog of his size in an apartment. The answer is yes, it is. But when I think about what Bandi gives me in return, the effort I have to make feels much smaller.
-        </p>
-        <p class="body">
-          Every morning, when I hear Bandi’s particular little whining sound, I have to get up, feed him, and begin the day. Sometimes, even when he is quiet, I wake up naturally before him. For a while after we first got Bandi, I was very diligent about taking him on morning walks. These days, I have passed much of that role on to my wife.
-        </p>
-        <p class="body">
-          The first place I lived with Bandi was not Seoul, but Bucheon in Gyeonggi Province. More precisely, it was somewhere near the border between Seoul and Bucheon. There was a lot of greenery there, and whenever I invited people over, they would often say, “I didn’t know there was a place like this near Seoul.”
-        </p>
-        <p class="body">
-          I lived there for more than seven years, and spent five of those years with Bandi. Although it was an apartment, waking up there often felt like waking up at a campsite or somewhere in the countryside. The air carried the scent of the forest from the hill behind us, and because there were not many tall buildings, the sky felt open. It was a wonderful place to live with Bandi.
-        </p>
-        <p class="body">
-          Now Bandi and I live near the Han River in Seoul. Whenever I have time, I can take him out to the grass by the river, but it is hard to let him run freely. I do not get to see him sprint around as much as I used to, but at least I can give him soft ground to walk on and a chance to meet many different friends.
-        </p>
-        <p class="body">
-          Bandi is now entering middle age in human years. In a way, he and I are going through a similar season of life. That means I need to pay more attention to his health. Recently, he gained quite a bit of weight, so we cut his meals by about half. Thankfully, he has slowly started to lose some weight.
-        </p>
-        <p class="body">
-          Last night, my wife and I ordered delivery food for the first time in a while and sat on the sofa to eat. Bandi came over and settled near my feet. Then he looked up at me with that particular gaze of his. In the end, I had no choice but to give him nearly three times more treats than usual.
-        </p>
-        <p class="body">
-          Bandi is very good at expressing himself without barking. Sometimes I think that a strong silence can also be a very effective communication strategy.
-        </p>
-        <p class="body">
-          When I was young, having a dog was not allowed in my home. So living with a dog someday became one of the small items on my bucket list. Now, it has become an ordinary fragment of everyday life.
-        </p>
-        <p class="body">
-          And perhaps that is exactly what makes it so precious.
-        </p>
-      </article>
+        <div class="note-content">
+          <div>
+            <p class="meta">
+              <span>Everyday Life</span>
+              <span class="slash">/</span>
+              <span>Bandi</span>
+            </p>
 
-      <article style="display:none">
-        <div class="meta"><span>Thoughts</span><span>Lime</span></div>
-        <h2>A/B test is something I learned from Lime.</h2>
-        <p class="note">
-          Before believing in one answer too strongly, test two versions. The market often teaches faster than opinion.
-        </p>
-      </article>
+            <h2 class="note-title">Everyday Life with Bandi</h2>
 
-      <article style="display:none">
-        <div class="meta"><span>Pictures</span><span>Suzhou</span></div>
-        <div class="photo"><img src="images/suzhou.JPG" alt="Suzhou" /></div>
-        <h2>Suzhou and the quiet discipline of beauty.</h2>
-        <p class="body">
-          Old cities do not try to explain themselves. They simply hold their rhythm long enough for people to understand.
-        </p>
-      </article>
+            <p class="excerpt">
+              A small note about living with Bandi, the Corgi — and how he communicates in his own way.
+            </p>
+          </div>
 
-      <article style="display:none">
-        <div class="meta"><span>Pet</span><span>Bandi</span></div>
-        <div class="photo vertical"><img src="images/bandi_soccer.jpg" alt="Bandi" /></div>
-        <h2>Bandi, and the habit of paying attention.</h2>
-        <p class="body">
-          Some stories are not big. They repeat every day, quietly, until they become the texture of life.
-        </p>
+          <div class="note-footer">
+            <time datetime="2026-06">June 2026</time>
+
+            <div class="language-links" aria-label="Language links for Bandi note">
+              <a href="posts/bandi-en.html">Read in English</a>
+              <span class="divider" aria-hidden="true"></span>
+              <a href="posts/bandi-ko.html" lang="ko">한국어로 읽기</a>
+            </div>
+          </div>
+        </div>
       </article>
     </main>
 
     <section class="about" id="about">
-      <strong>This is a place where I collect notes and slowly build a small library of my own.</strong>
+      <h2>About</h2>
+
       <p>
-        I gather photographs, thoughts, journals, words and phrases, ordinary scenes, and small memories along the way. Over time, I hope this space becomes a quiet library of what I noticed, learned, and wanted to keep.
+        This is a place where I collect notes. Over time, I hope to make a small library with them.
       </p>
     </section>
 
     <footer>
       <div>© Gihyun Kwon</div>
-      <div>Seoul · gihyun.com</div>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="mailto:hello@gihyun.com">Email</a>
+      </div>
     </footer>
   </div>
 </body>
